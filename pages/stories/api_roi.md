@@ -127,8 +127,6 @@ curl --location --request GET 'https://www.roi.ru/api/attributes/status'
 
 ##### Success response (HTTP 200)
 
-Значения справочника уровней реализации инициатив.
-
 <div class="panel panel-default">
 
 <!-- Nav tabs -->
