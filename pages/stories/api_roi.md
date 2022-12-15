@@ -1,5 +1,5 @@
 ---
-title: API РОИ
+title: ROI API
 keywords: РОИ, Российская общественная инициатива, API РОИ, API документация, технический писатель, технический писатель фриланс, технический писатель удаленно
 sidebar: general_sidebar
 permalink: api_roi.html

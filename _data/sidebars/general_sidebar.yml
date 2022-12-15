@@ -9,6 +9,6 @@ entries:
     url: index.html
     output: web
 
-  - title: API ROI 
+  - title: ROI API 
     url: api_roi.html
     output: web
