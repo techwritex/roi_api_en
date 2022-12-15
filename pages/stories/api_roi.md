@@ -103,7 +103,7 @@ curl --location --request GET 'https://www.roi.ru/api/attributes/level'
 
 ##### Unauthorized response (HTTP 401)
 
-The client request has not been completed because of invalid authentication credentials for the resource.
+The request has not been completed because of invalid authentication credentials for the resource.
 
 {% include important.html content="To fix the error, make sure the endpoint is correct and retry the request." %}
 
@@ -190,6 +190,8 @@ curl --location --request GET 'https://www.roi.ru/api/attributes/status'
 
 ##### Unauthorized response (HTTP 401)
 
+The request has not been completed because of invalid authentication credentials for the resource.
+
 {% include important.html content="To fix the error, make sure the endpoint is correct and retry the request." %}
 
 ***
@@ -215,8 +217,6 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/poll'
 ````
 
 ##### Success response (HTTP 200)
-
-Значения справочника уровней реализации инициатив.
 
 <div class="panel panel-default">
 
@@ -342,6 +342,8 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/poll'
 
 ##### Unauthorized response (HTTP 401)
 
+The request has not been completed because of invalid authentication credentials for the resource.
+
 {% include important.html content="To fix the error, make sure the endpoint is correct and retry the request." %}
 
 ***
@@ -363,8 +365,6 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/complete'
 ````
 
 ##### Success response (HTTP 200)
-
-Значения справочника уровней реализации инициатив.
 
 <div class="panel panel-default">
 
@@ -487,6 +487,8 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/complete'
 
 ##### Unauthorized response (HTTP 401)
 
+The request has not been completed because of invalid authentication credentials for the resource.
+
 {% include important.html content="To fix the error, make sure the endpoint is correct and retry the request." %}
 
 ***
@@ -508,8 +510,6 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/archive'
 ````
 
 ##### Success response (HTTP 200)
-
-Значения справочника уровней реализации инициатив.
 
 <div class="panel panel-default">
 
@@ -632,6 +632,8 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/archive'
 
 ##### Unauthorized response (HTTP 401)
 
+The request has not been completed because of invalid authentication credentials for the resource.
+
 {% include important.html content="To fix the error, make sure the endpoint is correct and retry the request." %}
 
 ***
@@ -655,8 +657,6 @@ curl --location --request GET 'https://www.roi.ru/api/petition/1016'
 ````
 
 ##### Success response (HTTP 200)
-
-Значения справочника уровней реализации инициатив.
 
 <div class="panel panel-default">
 
@@ -792,6 +792,8 @@ curl --location --request GET 'https://www.roi.ru/api/petition/1016'
 </div>
 
 ##### Unauthorized response (HTTP 401)
+
+The request has not been completed because of invalid authentication credentials for the resource.
 
 {% include important.html content="To fix the error, make sure the endpoint is correct and retry the request." %}
 
