@@ -22,7 +22,7 @@ summary: "v 1.0"
 
 - Base url <code class="language-plaintext highlighter-rouge">https://www.roi.ru/api/</code>.
 
-## Resoueces description
+## Resources description
 
 ### Справочники
 
@@ -102,6 +102,8 @@ curl --location --request GET 'https://www.roi.ru/api/attributes/level'
 </div>
 
 ##### Unauthorized response (HTTP 401)
+
+The client request has not been completed because of invalid authentication credentials for the resource.
 
 {% include important.html content="To fix the error, make sure the endpoint is correct and retry the request." %}
 
