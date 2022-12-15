@@ -638,19 +638,19 @@ The request has not been completed because of invalid authentication credentials
 
 ***
 
-#### Инициатива
+#### Initiative
 
 <span class="label label-success" style="font-size: .9em;">GET</span> **/petition/{id}**
 
 Получает информацию по интересующей инициативе.
 
-##### Параметры
+##### Path Parameters
 
-**id** <span style="color: #848484; font-weight: 400; text-transform: lowercase;">(обязательный)</span> - Идентификатор инициативы.
+**id** <span style="color: #848484; font-weight: 400; text-transform: lowercase;">(required)</span> - Initiative ID.
 
 ##### Example of API call
 
-{% include note.html content="приведен пример по инициативе “Мой дом - моя крепость!” (id=1016)." %}
+{% include note.html content="Example based on Initiative ID 1016 - *Мой дом - моя крепость!*" %}
 
 ```bash
 curl --location --request GET 'https://www.roi.ru/api/petition/1016'
