@@ -2,9 +2,10 @@
 title: "API ROI Documentation"
 keywords: РОИ, Российская общественная инициатива, API РОИ, API документация, технический писатель, технический писатель фриланс, технический писатель удаленно
 # tags:
+toc: false
 sidebar: general_sidebar
 permalink: index.html
-summary: "This document based on [public information](https://www.roi.ru/page/api/)."
+summary: "This document based on public information from www.roi.ru."
 ---
 
 ## The task
