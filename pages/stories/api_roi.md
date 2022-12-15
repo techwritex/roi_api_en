@@ -18,24 +18,23 @@ summary: "v 1.0"
 
 - Ответы на запросы предоставляются в формате JSON.
 
-- Ключ авторизации (API key) не требуется.
+- API can be used directly without registering an API key.
 
-- Корневой адрес API <code class="language-plaintext highlighter-rouge">https://www.roi.ru/api/</code>.
+- Base url <code class="language-plaintext highlighter-rouge">https://www.roi.ru/api/</code>.
 
-
-## Описание ресурсов
+## Resoueces description
 
 ### Справочники
 
 Вспомогательные данные для структурирования и хранения инициатив.
 
-#### Уровни реализации инициатив
+#### Initiatives implementation levels
 
 <span class="label label-success" style="font-size: .9em;">GET</span> **/attributes/level**
 
-Получает значения справочника с уровнями реализации инициатив.
+This endpoint allows you to get values of initiatives implementation levels.
 
-##### Параметры
+##### Path Parameters
 
 Не используются.
 
@@ -45,9 +44,7 @@ summary: "v 1.0"
 curl --location --request GET 'https://www.roi.ru/api/attributes/level'
 ````
 
-##### Успешный ответ на запрос (HTTP 200)
-
-Значения справочника уровней реализации инициатив.
+##### Success response (HTTP 200)
 
 <div class="panel panel-default">
 
@@ -55,12 +52,12 @@ curl --location --request GET 'https://www.roi.ru/api/attributes/level'
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active">
       <a href="#tab-1-id" aria-controls="tab-1-id" role="tab" data-toggle="tab">
-                Модель
+                Schema
             </a>
         </li>
         <li role="presentation">
             <a href="#tab-2-id" aria-controls="tab-2-id" role="tab" data-toggle="tab">
-                Ответ
+                Response
             </a>
         </li>
     </ul>
@@ -104,11 +101,9 @@ curl --location --request GET 'https://www.roi.ru/api/attributes/level'
     </div>
 </div>
 
-##### Ошибочный ответ на запрос (HTTP 401)
+##### Unauthorized response (HTTP 401)
 
-Ошибка авторизации. 
-
-{% include important.html content="для устранения ошибки убедитесь в правильности написания URL точки входа (endpoint) и повторите запрос." %}
+{% include important.html content="To fix the error, make sure the endpoint is correct and retry the request." %}
 
 ***
 
@@ -191,11 +186,9 @@ curl --location --request GET 'https://www.roi.ru/api/attributes/status'
     </div>
 </div>
 
-##### Ошибочный ответ на запрос (HTTP 401)
+##### Unauthorized response (HTTP 401)
 
-Ошибка авторизации. 
-
-{% include important.html content="для устранения ошибки убедитесь в правильности написания URL точки входа (endpoint) и повторите запрос." %}
+{% include important.html content="To fix the error, make sure the endpoint is correct and retry the request." %}
 
 ***
 
@@ -345,11 +338,9 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/poll'
     </div>
 </div>
 
-##### Ошибочный ответ на запрос (HTTP 401)
+##### Unauthorized response (HTTP 401)
 
-Ошибка авторизации. 
-
-{% include important.html content="для устранения ошибки убедитесь в правильности написания URL точки входа (endpoint) и повторите запрос." %}
+{% include important.html content="To fix the error, make sure the endpoint is correct and retry the request." %}
 
 ***
 
@@ -492,11 +483,9 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/complete'
     </div>
 </div>
 
-##### Ошибочный ответ на запрос (HTTP 401)
+##### Unauthorized response (HTTP 401)
 
-Ошибка авторизации. 
-
-{% include important.html content="для устранения ошибки убедитесь в правильности написания URL точки входа (endpoint) и повторите запрос." %}
+{% include important.html content="To fix the error, make sure the endpoint is correct and retry the request." %}
 
 ***
 
@@ -639,11 +628,9 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/archive'
     </div>
 </div>
 
-##### Ошибочный ответ на запрос (HTTP 401)
+##### Unauthorized response (HTTP 401)
 
-Ошибка авторизации. 
-
-{% include important.html content="для устранения ошибки убедитесь в правильности написания URL точки входа (endpoint) и повторите запрос." %}
+{% include important.html content="To fix the error, make sure the endpoint is correct and retry the request." %}
 
 ***
 
@@ -802,10 +789,8 @@ curl --location --request GET 'https://www.roi.ru/api/petition/1016'
     </div>
 </div>
 
-##### Ошибочный ответ на запрос (HTTP 401)
+##### Unauthorized response (HTTP 401)
 
-Ошибка авторизации. 
-
-{% include important.html content="для устранения ошибки убедитесь в правильности написания URL точки входа (endpoint) и повторите запрос." %}
+{% include important.html content="To fix the error, make sure the endpoint is correct and retry the request." %}
 
 {% include links.html %}
