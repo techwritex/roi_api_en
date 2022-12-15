@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="v 1.0">
+<meta name="keywords" content=" РОИ, Российская общественная инициатива, API РОИ, API документация, технический писатель, технический писатель фриланс, технический писатель удаленно">
+<title>API РОИ | Технический писатель Владимир Юсупов</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<!-- <link rel="stylesheet" href="css/theme-blue.css"> -->
+<!-- <link rel="stylesheet" href="css/theme-green.css"> -->
+<link rel="stylesheet" href="css/theme-custom.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="roi_api" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button> -->
+            <!-- <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Пример API документации</span></a> -->
+            <a class="fa fa-file-code-o navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Пример API документации</span></a>
+            <!-- <a class="navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Пример API документации</span></a> -->
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <!-- <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li> -->
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <!-- <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li> -->
+                
+                
+                
+                <!-- <li><a href="news">News</a></li> -->
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <!-- <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li> -->
+                
+                <!-- <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li> -->
+                
+                
+                
+			<!-- <li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject= feedback&body=I have some feedback about the API РОИ page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li> -->
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <!-- <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div> -->
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="API РОИ">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <!-- <li class="sidebarTitle"> </li> -->
+  <!-- <li class="sidebarTitle"><img src="images/techwritex_vladimir_yusupov.png" alt="Технический писатель Владимир Юсупов"/> </li> -->
+  
+  
+  
+  <li>
+      <!-- <a title="Задача" href="#">Задача</a> -->
+      <a title="Задача" href="index.html">Задача</a>
+      <!-- <ul>
+          
+      </ul> -->
+   </li>
+     
+      
+  
+  <li>
+      <!-- <a title="API РОИ" href="#">API РОИ</a> -->
+      <a title="API РОИ" href="api_roi.html">API РОИ</a>
+      <!-- <ul>
+          
+      </ul> -->
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">API РОИ</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">v 1.0</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4,h5,h6' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+   <h2 id="общая-информация">Общая информация</h2>
+
+<ul>
+  <li>
+    <p>Взаимодействие с платформой осуществляется через REST API.</p>
+  </li>
+  <li>
+    <p>API функционирует в режиме чтения данных (GET-запросы).</p>
+  </li>
+  <li>
+    <p>Все запросы выполняются только по протоколу HTTPS.</p>
+  </li>
+  <li>
+    <p>Ответы на запросы предоставляются в формате JSON.</p>
+  </li>
+  <li>
+    <p>Ключ авторизации (API key) не требуется.</p>
+  </li>
+  <li>
+    <p>Корневой адрес API <code class="language-plaintext highlighter-rouge">https://www.roi.ru/api/</code>.</p>
+  </li>
+</ul>
+
+<h2 id="описание-ресурсов">Описание ресурсов</h2>
+
+<h3 id="справочники">Справочники</h3>
+
+<p>Вспомогательные данные для структурирования и хранения инициатив.</p>
+
+<h4 id="уровни-реализации-инициатив">Уровни реализации инициатив</h4>
+
+<p><span class="label label-success" style="font-size: .9em;">GET</span> <strong>/attributes/level</strong></p>
+
+<p>Получает значения справочника с уровнями реализации инициатив.</p>
+
+<h5 id="параметры">Параметры</h5>
+
+<p>Не используются.</p>
+
+<h5 id="пример-запроса">Пример запроса</h5>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://www.roi.ru/api/attributes/level'</span>
+</code></pre></div></div>
+
+<h5 id="успешный-ответ-на-запрос-http-200">Успешный ответ на запрос (HTTP 200)</h5>
+
+<p>Значения справочника уровней реализации инициатив.</p>
+
+<div class="panel panel-default">
+
+<!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+      <a href="#tab-1-id" aria-controls="tab-1-id" role="tab" data-toggle="tab">
+                Модель
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#tab-2-id" aria-controls="tab-2-id" role="tab" data-toggle="tab">
+                Ответ
+            </a>
+        </li>
+    </ul>
+
+<!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="tab-1-id">
+            <div class="container-fluid">
+
+        <table>
+          <tbody>
+            <tr>
+              <td><strong><em>data</em></strong></td>
+              <td><em>array</em></td>
+              <td><em>Корневой элемент данных</em></td>
+            </tr>
+            <tr>
+              <td><strong>id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор</td>
+            </tr>
+            <tr>
+              <td><strong>title</strong></td>
+              <td>string</td>
+              <td>Уровень реализации</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div> <!-- This close tag must be left aligned. -->
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tab-2-id">
+            <div class="container-fluid">
+
+        <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Федеральный"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Региональный"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Муниципальный"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>        </div>
+      </div> <!-- This close tag must be left aligned. -->
+        </div>
+
+    </div>
+</div>
+
+<h5 id="ошибочный-ответ-на-запрос-http-401">Ошибочный ответ на запрос (HTTP 401)</h5>
+
+<p>Ошибка авторизации.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> для устранения ошибки убедитесь в правильности написания URL точки входа (endpoint) и повторите запрос.</div>
+
+<hr />
+
+<h4 id="статусы-инициативы">Статусы инициативы</h4>
+
+<p><span class="label label-success" style="font-size: .9em;">GET</span> <strong>/attributes/status</strong></p>
+
+<p>Получает значения справочника со статусами инициативы.</p>
+
+<h5 id="параметры-1">Параметры</h5>
+
+<p>Не используются.</p>
+
+<h5 id="пример-запроса-1">Пример запроса</h5>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://www.roi.ru/api/attributes/status'</span>
+</code></pre></div></div>
+
+<h5 id="успешный-ответ-на-запрос-http-200-1">Успешный ответ на запрос (HTTP 200)</h5>
+
+<p>Значения справочника уровней реализации инициатив.</p>
+
+<div class="panel panel-default">
+
+<!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+      <a href="#tab-3-id" aria-controls="tab-3-id" role="tab" data-toggle="tab">
+                Модель
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#tab-4-id" aria-controls="tab-4-id" role="tab" data-toggle="tab">
+                Ответ
+            </a>
+        </li>
+    </ul>
+
+<!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="tab-3-id">
+            <div class="container-fluid">
+
+        <table>
+          <tbody>
+            <tr>
+              <td><strong><em>data</em></strong></td>
+              <td><em>array</em></td>
+              <td><em>Корневой элемент данных</em></td>
+            </tr>
+            <tr>
+              <td><strong>id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор</td>
+            </tr>
+            <tr>
+              <td><strong>title</strong></td>
+              <td>string</td>
+              <td>Статусы инициативы</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div> <!-- This close tag must be left aligned. -->
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tab-4-id">
+            <div class="container-fluid">
+
+        <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"На голосовании"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">71</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"В архиве"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">51</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"На рассмотрении ЭРГ"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">61</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Решение принято ЭРГ"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>        </div>
+      </div> <!-- This close tag must be left aligned. -->
+        </div>
+
+    </div>
+</div>
+
+<h5 id="ошибочный-ответ-на-запрос-http-401-1">Ошибочный ответ на запрос (HTTP 401)</h5>
+
+<p>Ошибка авторизации.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> для устранения ошибки убедитесь в правильности написания URL точки входа (endpoint) и повторите запрос.</div>
+
+<hr />
+
+<h3 id="инициативы">Инициативы</h3>
+
+<p>Предложения граждан России по вопросам социально-экономического развития страны, совершенствования государственного и муниципального управления.</p>
+
+<h4 id="инициативы-в-статусе-на-голосовании">Инициативы в статусе “На голосовании”</h4>
+
+<p><span class="label label-success" style="font-size: .9em;">GET</span> <strong>/petitions/poll</strong></p>
+
+<p>Получает список инициатив в статусе «На голосовании».</p>
+
+<h5 id="параметры-2">Параметры</h5>
+
+<p>Не используются.</p>
+
+<h5 id="пример-запроса-2">Пример запроса</h5>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://www.roi.ru/api/petitions/poll'</span>
+</code></pre></div></div>
+
+<h5 id="успешный-ответ-на-запрос-http-200-2">Успешный ответ на запрос (HTTP 200)</h5>
+
+<p>Значения справочника уровней реализации инициатив.</p>
+
+<div class="panel panel-default">
+
+<!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+      <a href="#tab-5-id" aria-controls="tab-5-id" role="tab" data-toggle="tab">
+                Модель
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#tab-6-id" aria-controls="tab-6-id" role="tab" data-toggle="tab">
+                Ответ
+            </a>
+        </li>
+    </ul>
+
+<!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="tab-5-id">
+            <div class="container-fluid">
+
+        <table>
+          <tbody>
+            <tr>
+              <td><strong><em>data</em></strong></td>
+              <td><em>array</em></td>
+              <td><em>Корневой элемент данных</em></td>
+            </tr>
+            <tr>
+              <td><strong>id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор</td>
+            </tr>
+            <tr>
+              <td><strong>title</strong></td>
+              <td>string</td>
+              <td>Наименование инициативы</td>
+            </tr>
+            <tr>
+              <td><strong><em>geo</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Информация о местоположении</em></td>
+            </tr>
+            <tr>
+              <td><strong>geo.area</strong></td>
+              <td>string</td>
+              <td>Федеральный округ</td>
+            </tr>
+            <tr>
+              <td><strong>geo.region</strong></td>
+              <td>string</td>
+              <td>Регион</td>
+            </tr>
+            <tr>
+              <td><strong>geo.municipality</strong></td>
+              <td>string</td>
+              <td>Муниципалитет</td>
+            </tr>
+            <tr>
+              <td><strong><em>level</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Уровень инициативы</em></td>
+            </tr>
+            <tr>
+              <td><strong>level.id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор уровня</td>
+            </tr>
+            <tr>
+              <td><strong>level.title</strong></td>
+              <td>string</td>
+              <td>Наименование уровня</td>
+            </tr>
+            <tr>
+              <td><strong><em>status</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Статус инициативы</em></td>
+            </tr>
+            <tr>
+              <td><strong>status.id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор статуса</td>
+            </tr>
+            <tr>
+              <td><strong>status.title</strong></td>
+              <td>string</td>
+              <td>Наименование статуса</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div> <!-- This close tag must be left aligned. -->
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tab-6-id">
+            <div class="container-fluid">
+
+        <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">24104</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ввести понятие «Самозанятость», дать возможность работать без документов"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Уральский федеральный округ"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Тюменская область без автономных округов"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Федеральный"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"На голосовании"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">24241</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Установить ограждения на тротуарах перед пешеходными переходами"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Южный федеральный округ"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Краснодарский край"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Федеральный"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"На голосовании"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25439</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Увеличить в 5 раз штраф и ввести приоритетную эвакуацию за нарушение правил остановки или стоянки в местах, отведенных для остановки или стоянки транспортных средств инвалидов"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Центральный федеральный округ"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"г. Москва"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Федеральный"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"На голосовании"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+
+</span><span class="c1">...</span><span class="w">
+
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">84330</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Запретить вырубку деревьев и строительство нового жилого дома в центре г.Нижневартовска ХМАО-Югры, а также рассмотреть вопрос о реконструкции существующего сквера на данной территории квартал Б"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Уральский федеральный округ"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ханты-Мансийский автономный округ - Югра"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"municipality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Городской округ город Нижневартовск"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Муниципальный"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"На голосовании"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>        </div>
+      </div> <!-- This close tag must be left aligned. -->
+        </div>
+
+    </div>
+</div>
+
+<h5 id="ошибочный-ответ-на-запрос-http-401-2">Ошибочный ответ на запрос (HTTP 401)</h5>
+
+<p>Ошибка авторизации.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> для устранения ошибки убедитесь в правильности написания URL точки входа (endpoint) и повторите запрос.</div>
+
+<hr />
+
+<h4 id="инициативы-в-статусе-решение-принято">Инициативы в статусе “Решение принято”</h4>
+
+<p><span class="label label-success" style="font-size: .9em;">GET</span> <strong>/petitions/complete</strong></p>
+
+<p>Получает список инициатив в статусе «Решение принято».</p>
+
+<h5 id="параметры-3">Параметры</h5>
+
+<p>Не используются.</p>
+
+<h5 id="пример-запроса-3">Пример запроса</h5>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://www.roi.ru/api/petitions/complete'</span>
+</code></pre></div></div>
+
+<h5 id="успешный-ответ-на-запрос-http-200-3">Успешный ответ на запрос (HTTP 200)</h5>
+
+<p>Значения справочника уровней реализации инициатив.</p>
+
+<div class="panel panel-default">
+
+<!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+      <a href="#tab-7-id" aria-controls="tab-7-id" role="tab" data-toggle="tab">
+                Модель
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#tab-8-id" aria-controls="tab-8-id" role="tab" data-toggle="tab">
+                Ответ
+            </a>
+        </li>
+    </ul>
+
+<!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="tab-7-id">
+            <div class="container-fluid">
+
+        <table>
+          <tbody>
+            <tr>
+              <td><strong><em>data</em></strong></td>
+              <td><em>array</em></td>
+              <td><em>Корневой элемент данных</em></td>
+            </tr>
+            <tr>
+              <td><strong>id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор</td>
+            </tr>
+            <tr>
+              <td><strong>title</strong></td>
+              <td>string</td>
+              <td>Наименование инициативы</td>
+            </tr>
+            <tr>
+              <td><strong><em>geo</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Информация о местоположении</em></td>
+            </tr>
+            <tr>
+              <td><strong>geo.area</strong></td>
+              <td>string</td>
+              <td>Федеральный округ</td>
+            </tr>
+            <tr>
+              <td><strong>geo.region</strong></td>
+              <td>string</td>
+              <td>Регион</td>
+            </tr>
+            <tr>
+              <td><strong>geo.municipality</strong></td>
+              <td>string</td>
+              <td>Муниципалитет</td>
+            </tr>
+            <tr>
+              <td><strong><em>level</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Уровень инициативы</em></td>
+            </tr>
+            <tr>
+              <td><strong>level.id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор уровня</td>
+            </tr>
+            <tr>
+              <td><strong>level.title</strong></td>
+              <td>string</td>
+              <td>Наименование уровня</td>
+            </tr>
+            <tr>
+              <td><strong><em>status</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Статус инициативы</em></td>
+            </tr>
+            <tr>
+              <td><strong>status.id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор статуса</td>
+            </tr>
+            <tr>
+              <td><strong>status.title</strong></td>
+              <td>string</td>
+              <td>Наименование статуса</td>
+            </tr>
+            <tr>
+              <td><strong><em>result</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Информация о решении по инициативе</em></td>
+            </tr>
+            <tr>
+              <td><strong>result.id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор решения</td>
+            </tr>
+            <tr>
+              <td><strong>result.title</strong></td>
+              <td>string</td>
+              <td>Наименование решения</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div> <!-- This close tag must be left aligned. -->
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tab-8-id">
+            <div class="container-fluid">
+
+        <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">309</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Вернуть минимально допустимый уровень содержание алкоголя в крови водителя"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Центральный федеральный округ"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Московская область"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Федеральный"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">61</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Решение принято ЭРГ"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Данная инициатива реализована"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">401</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Сохранять номер мобильного телефона при переходе от одного оператора связи к другому."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Центральный федеральный округ"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Владимирская область"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Федеральный"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">61</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Решение принято ЭРГ"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Данная инициатива реализована"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+</span><span class="c1">...</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">66369</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5 шагов: как поддержать граждан России и её экономику"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Центральный федеральный округ"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"г. Москва"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"municipality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Северное"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Федеральный"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">61</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Решение принято ЭРГ"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>        </div>
+      </div> <!-- This close tag must be left aligned. -->
+        </div>
+
+    </div>
+</div>
+
+<h5 id="ошибочный-ответ-на-запрос-http-401-3">Ошибочный ответ на запрос (HTTP 401)</h5>
+
+<p>Ошибка авторизации.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> для устранения ошибки убедитесь в правильности написания URL точки входа (endpoint) и повторите запрос.</div>
+
+<hr />
+
+<h4 id="инициативы-в-статусе-в-архиве">Инициативы в статусе “В архиве”</h4>
+
+<p><span class="label label-success" style="font-size: .9em;">GET</span> <strong>/petitions/archive</strong></p>
+
+<p>Получает список инициатив в статусе «В архиве».</p>
+
+<h5 id="параметры-4">Параметры</h5>
+
+<p>Не используются.</p>
+
+<h5 id="пример-запроса-4">Пример запроса</h5>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://www.roi.ru/api/petitions/archive'</span>
+</code></pre></div></div>
+
+<h5 id="успешный-ответ-на-запрос-http-200-4">Успешный ответ на запрос (HTTP 200)</h5>
+
+<p>Значения справочника уровней реализации инициатив.</p>
+
+<div class="panel panel-default">
+
+<!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+      <a href="#tab-9-id" aria-controls="tab-9-id" role="tab" data-toggle="tab">
+                Модель
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#tab-10-id" aria-controls="tab-10-id" role="tab" data-toggle="tab">
+                Ответ
+            </a>
+        </li>
+    </ul>
+
+<!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="tab-9-id">
+            <div class="container-fluid">
+
+        <table>
+          <tbody>
+            <tr>
+              <td><strong><em>data</em></strong></td>
+              <td><em>array</em></td>
+              <td><em>Корневой элемент данных</em></td>
+            </tr>
+            <tr>
+              <td><strong>id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор</td>
+            </tr>
+            <tr>
+              <td><strong>title</strong></td>
+              <td>string</td>
+              <td>Наименование инициативы</td>
+            </tr>
+            <tr>
+              <td><strong><em>geo</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Информация о местоположении</em></td>
+            </tr>
+            <tr>
+              <td><strong>geo.area</strong></td>
+              <td>string</td>
+              <td>Федеральный округ</td>
+            </tr>
+            <tr>
+              <td><strong>geo.region</strong></td>
+              <td>string</td>
+              <td>Регион</td>
+            </tr>
+            <tr>
+              <td><strong>geo.municipality</strong></td>
+              <td>string</td>
+              <td>Муниципалитет</td>
+            </tr>
+            <tr>
+              <td><strong><em>level</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Уровень инициативы</em></td>
+            </tr>
+            <tr>
+              <td><strong>level.id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор уровня</td>
+            </tr>
+            <tr>
+              <td><strong>level.title</strong></td>
+              <td>string</td>
+              <td>Наименование уровня</td>
+            </tr>
+            <tr>
+              <td><strong><em>status</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Статус инициативы</em></td>
+            </tr>
+            <tr>
+              <td><strong>status.id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор статуса</td>
+            </tr>
+            <tr>
+              <td><strong>status.title</strong></td>
+              <td>string</td>
+              <td>Наименование статуса</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div> <!-- This close tag must be left aligned. -->
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tab-10-id">
+            <div class="container-fluid">
+
+        <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">310</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Возврат системы перехода на «зимнее» время"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Центральный федеральный округ"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"г. Москва"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Федеральный"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">71</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"В архиве"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">330</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Наделить собственников недвижимости избирательным правом на муниципальном уровне по месту ее нахождения"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Центральный федеральный округ"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"г. Москва"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Федеральный"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">71</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"В архиве"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">331</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Упрощенный порядок развертывания сетей БШПД в сельских населенных пунктах и малых городах"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Центральный федеральный округ"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"г. Москва"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Федеральный"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">71</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"В архиве"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+</span><span class="c1">...</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">68517</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Создать атласы конструкторских решений по всем отраслям промышленности"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Центральный федеральный округ"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"г. Москва"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"municipality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Муниципальный район Светлогорский"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Федеральный"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">71</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"В архиве"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>        </div>
+      </div> <!-- This close tag must be left aligned. -->
+        </div>
+
+    </div>
+</div>
+
+<h5 id="ошибочный-ответ-на-запрос-http-401-4">Ошибочный ответ на запрос (HTTP 401)</h5>
+
+<p>Ошибка авторизации.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> для устранения ошибки убедитесь в правильности написания URL точки входа (endpoint) и повторите запрос.</div>
+
+<hr />
+
+<h4 id="инициатива">Инициатива</h4>
+
+<p><span class="label label-success" style="font-size: .9em;">GET</span> <strong>/petition/{id}</strong></p>
+
+<p>Получает информацию по интересующей инициативе.</p>
+
+<h5 id="параметры-5">Параметры</h5>
+
+<p><strong>id</strong> <span style="color: #848484; font-weight: 400; text-transform: lowercase;">(обязательный)</span> - Идентификатор инициативы.</p>
+
+<h5 id="пример-запроса-5">Пример запроса</h5>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> приведен пример по инициативе “Мой дом - моя крепость!” (id=1016).</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://www.roi.ru/api/petition/1016'</span>
+</code></pre></div></div>
+
+<h5 id="успешный-ответ-на-запрос-http-200-5">Успешный ответ на запрос (HTTP 200)</h5>
+
+<p>Значения справочника уровней реализации инициатив.</p>
+
+<div class="panel panel-default">
+
+<!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+      <a href="#tab-11-id" aria-controls="tab-11-id" role="tab" data-toggle="tab">
+                Модель
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#tab-12-id" aria-controls="tab-12-id" role="tab" data-toggle="tab">
+                Ответ
+            </a>
+        </li>
+    </ul>
+
+<!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="tab-11-id">
+            <div class="container-fluid">
+
+        <table>
+          <tbody>
+            <tr>
+              <td><strong><em>data</em></strong></td>
+              <td><em>array</em></td>
+              <td><em>Корневой элемент данных</em></td>
+            </tr>
+            <tr>
+              <td><strong>id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор</td>
+            </tr>
+            <tr>
+              <td><strong>code</strong></td>
+              <td>string</td>
+              <td>Номер инициативы</td>
+            </tr>
+            <tr>
+              <td><strong>url</strong></td>
+              <td>string</td>
+              <td>Ссылка на инициативу</td>
+            </tr>
+            <tr>
+              <td><strong><em>level</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Уровень инициативы</em></td>
+            </tr>
+            <tr>
+              <td><strong>level.id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор уровня</td>
+            </tr>
+            <tr>
+              <td><strong>level.title</strong></td>
+              <td>string</td>
+              <td>Наименование уровня</td>
+            </tr>
+            <tr>
+              <td><strong><em>status</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Статус инициативы</em></td>
+            </tr>
+            <tr>
+              <td><strong>status.id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор статуса</td>
+            </tr>
+            <tr>
+              <td><strong>status.title</strong></td>
+              <td>string</td>
+              <td>Наименование статуса</td>
+            </tr>
+            <tr>
+              <td><strong><em>result</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Информация о решении по инициативе</em></td>
+            </tr>
+            <tr>
+              <td><strong>result.id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор решения</td>
+            </tr>
+            <tr>
+              <td><strong>result.title</strong></td>
+              <td>string</td>
+              <td>Наименование решения</td>
+            </tr>
+            <tr>
+              <td><strong>title</strong></td>
+              <td>string</td>
+              <td>Наименование инициативы</td>
+            </tr>
+            <tr>
+              <td><strong>description</strong></td>
+              <td>string</td>
+              <td>Описание инициативы</td>
+            </tr>
+            <tr>
+              <td><strong><em>attachment</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Дополнительные материалы</em></td>
+            </tr>
+            <tr>
+              <td><strong><em>attachment.photo</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Сопроводительные фотографии</em></td>
+            </tr>
+            <tr>
+              <td><strong>attachment.photo.title</strong></td>
+              <td>string</td>
+              <td>Наименование фотографии</td>
+            </tr>
+            <tr>
+              <td><strong>attachment.photo.url</strong></td>
+              <td>string</td>
+              <td>Ссылка на фотографию</td>
+            </tr>
+            <tr>
+              <td><strong><em>attachment.document</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Сопроводительные документы инициативы</em></td>
+            </tr>
+            <tr>
+              <td><strong>attachment.document.title</strong></td>
+              <td>string</td>
+              <td>Наименование документа</td>
+            </tr>
+            <tr>
+              <td><strong>attachment.document.url</strong></td>
+              <td>string</td>
+              <td>Ссылка на документ</td>
+            </tr>
+            <tr>
+              <td><strong><em>decision</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Предлагаемое решение по инициативе</em></td>
+            </tr>
+            <tr>
+              <td><strong>decision.text</strong></td>
+              <td>string</td>
+              <td>Текст предлагаемого решения</td>
+            </tr>
+            <tr>
+              <td><strong>prospective</strong></td>
+              <td>string</td>
+              <td>Описание проблемы</td>
+            </tr>
+            <tr>
+              <td><strong><em>category</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Категория инициативы</em></td>
+            </tr>
+            <tr>
+              <td><strong><em>category.id</em></strong></td>
+              <td>integer</td>
+              <td>Идентификатор категории</td>
+            </tr>
+            <tr>
+              <td><strong>category.title</strong></td>
+              <td>string</td>
+              <td>Наименование категории</td>
+            </tr>
+            <tr>
+              <td><strong><em>geo</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Информация о местоположении</em></td>
+            </tr>
+            <tr>
+              <td><strong>geo.area</strong></td>
+              <td>string</td>
+              <td>Федеральный округ</td>
+            </tr>
+            <tr>
+              <td><strong>geo.region</strong></td>
+              <td>string</td>
+              <td>Регион</td>
+            </tr>
+            <tr>
+              <td><strong>geo.municipality</strong></td>
+              <td>string</td>
+              <td>Муниципалитет</td>
+            </tr>
+            <tr>
+              <td><strong><em>date</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Информация о датах инициативы</em></td>
+            </tr>
+            <tr>
+              <td><strong><em>date.poll</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Дата публикации инициативы</em></td>
+            </tr>
+            <tr>
+              <td><strong>date.poll.begin</strong></td>
+              <td>integer</td>
+              <td>Дата начала голосования</td>
+            </tr>
+            <tr>
+              <td><strong>date.poll.end</strong></td>
+              <td>integer</td>
+              <td>Дата окончания голосования</td>
+            </tr>
+            <tr>
+              <td><strong><em>vote</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Информация о голосах инициативы</em></td>
+            </tr>
+            <tr>
+              <td><strong>vote.progress</strong></td>
+              <td>float</td>
+              <td>Прогресс набора необходимого порога голосов, %</td>
+            </tr>
+            <tr>
+              <td><strong>vote.threshold</strong></td>
+              <td>integer</td>
+              <td>Порог голосов</td>
+            </tr>
+            <tr>
+              <td><strong>vote.affirmative</strong></td>
+              <td>integer</td>
+              <td>Подано голосов «За» инициативу</td>
+            </tr>
+            <tr>
+              <td><strong>vote.negative</strong></td>
+              <td>integer</td>
+              <td>Подано голосов «Против» инициативы</td>
+            </tr>
+            <tr>
+              <td><strong><em>authorship</em></strong></td>
+              <td><em>object</em></td>
+              <td><em>Другие инициативы на голосовании автора</em></td>
+            </tr>
+            <tr>
+              <td><strong>authorship.id</strong></td>
+              <td>integer</td>
+              <td>Идентификатор другой инициативы на голосовании автора</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div> <!-- This close tag must be left aligned. -->
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tab-12-id">
+            <div class="container-fluid">
+
+        <div class="language-json-doc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1016</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"77Ф1016"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.roi.ru/1016"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Федеральный"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">61</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Решение принято ЭРГ"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Мой дом - моя крепость!"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Известны случаи, когда граждане, подвергшиеся нападению в собственном доме и оказавшие злоумышленникам сопротивление, попадают на скамью подсудимых по обвинениям в превышении пределов необходимой самообороны, умышленном причинении вреда здоровью нападавших, или даже убийстве. Даже при благоприятном исходе дела это оборачивается потраченными нервами, временем, деньгами и здоровьем.</span><span class="se">\r\n\r\n</span><span class="s2">Предлагается внести поправки в федеральные законы, или конституцию, с тем чтобы любые действия, совершённые в собственном доме для защиты имущества, здоровья и жизни близких, собственной жизни и здоровья считались совершёнными в ситуации необходимой самообороны и не выходящими за её пределы(если не будет доказано обратное, и необходимость доказательства лежит на обвиняющей стороне)."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"decision"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Мой дом - моя крепость!"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"prospective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Устранится </span><span class="se">\"</span><span class="s2">презумция виновности</span><span class="se">\"</span><span class="s2"> в отношении законопослушных людей, защищающих свои конституционные права и ценности. Люди, защитившие свой дом и семью, смогут продолжать нормально жить вместо того, чтобы заниматься заниматься судебной волокитой, или даже сидеть в тюрьме по сути ни за что."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Безопасность"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1143</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Уголовный кодекс"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"geo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Центральный федеральный округ"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"г. Москва"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"poll"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"begin"</span><span class="p">:</span><span class="w"> </span><span class="mi">1366488000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="mi">1392889595</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"vote"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"progress"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.45</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"affirmative"</span><span class="p">:</span><span class="w"> </span><span class="mi">100458</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"negative"</span><span class="p">:</span><span class="w"> </span><span class="mi">552</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>        </div>
+      </div> <!-- This close tag must be left aligned. -->
+        </div>
+
+    </div>
+</div>
+
+<h5 id="ошибочный-ответ-на-запрос-http-401-5">Ошибочный ответ на запрос (HTTP 401)</h5>
+
+<p>Ошибка авторизации.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> для устранения ошибки убедитесь в правильности написания URL точки входа (endpoint) и повторите запрос.</div>
+
+
+
+   <!--  -->
+
+    <div class="tags">
+        
+    </div>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               <!-- &copy;2021 Владимир Юсупов. Все права защищены. <br /> -->
+               API документация подготовлена для портала <a href="https://www.roi.ru/" target="_blank">"Российская общественная инициатива"</a>. <br />
+ Последнее обновление: 03.08.2021 <br />
+<p><a href="http://techwritex.github.io/" target="_blank"><img src="images/logo.png" alt="Технический писатель Владимир Юсупов"/></a></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>
