@@ -18,7 +18,7 @@ summary: "v 1.0"
 
 - Ответы на запросы предоставляются в формате JSON.
 
-- API can be used directly without registering an API key.
+- No sign up or API key needed.
 
 - Base url <code class="language-plaintext highlighter-rouge">https://www.roi.ru/api/</code>.
 
@@ -26,7 +26,7 @@ summary: "v 1.0"
 
 ### Справочники
 
-Вспомогательные данные для структурирования и хранения инициатив.
+Supporting data for structuring and storing initiatives.
 
 #### Initiatives implementation levels
 
@@ -36,9 +36,9 @@ This endpoint allows you to get values of initiatives implementation levels.
 
 ##### Path Parameters
 
-Не используются.
+Not used.
 
-##### Пример запроса
+##### Example of API call
 
 ```bash
 curl --location --request GET 'https://www.roi.ru/api/attributes/level'
@@ -113,17 +113,17 @@ curl --location --request GET 'https://www.roi.ru/api/attributes/level'
 
 Получает значения справочника со статусами инициативы.
 
-##### Параметры
+##### Path Parameters
 
-Не используются.
+Not used.
 
-##### Пример запроса
+##### Example of API call
 
 ```bash
 curl --location --request GET 'https://www.roi.ru/api/attributes/status'
 ````
 
-##### Успешный ответ на запрос (HTTP 200)
+##### Success response (HTTP 200)
 
 Значения справочника уровней реализации инициатив.
 
@@ -133,12 +133,12 @@ curl --location --request GET 'https://www.roi.ru/api/attributes/status'
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active">
       <a href="#tab-3-id" aria-controls="tab-3-id" role="tab" data-toggle="tab">
-                Модель
+                Schema
             </a>
         </li>
         <li role="presentation">
             <a href="#tab-4-id" aria-controls="tab-4-id" role="tab" data-toggle="tab">
-                Ответ
+                Response
             </a>
         </li>
     </ul>
@@ -202,17 +202,17 @@ curl --location --request GET 'https://www.roi.ru/api/attributes/status'
 
 Получает список инициатив в статусе «На голосовании».
 
-##### Параметры
+##### Path Parameters
 
-Не используются.
+Not used.
 
-##### Пример запроса
+##### Example of API call
 
 ```bash
 curl --location --request GET 'https://www.roi.ru/api/petitions/poll'
 ````
 
-##### Успешный ответ на запрос (HTTP 200)
+##### Success response (HTTP 200)
 
 Значения справочника уровней реализации инициатив.
 
@@ -222,12 +222,12 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/poll'
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active">
       <a href="#tab-5-id" aria-controls="tab-5-id" role="tab" data-toggle="tab">
-                Модель
+                Schema
             </a>
         </li>
         <li role="presentation">
             <a href="#tab-6-id" aria-controls="tab-6-id" role="tab" data-toggle="tab">
-                Ответ
+                Response
             </a>
         </li>
     </ul>
@@ -350,17 +350,17 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/poll'
 
 Получает список инициатив в статусе «Решение принято».
 
-##### Параметры
+##### Path Parameters
 
-Не используются.
+Not used.
 
-##### Пример запроса
+##### Example of API call
 
 ```bash
 curl --location --request GET 'https://www.roi.ru/api/petitions/complete'
 ````
 
-##### Успешный ответ на запрос (HTTP 200)
+##### Success response (HTTP 200)
 
 Значения справочника уровней реализации инициатив.
 
@@ -370,12 +370,12 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/complete'
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active">
       <a href="#tab-7-id" aria-controls="tab-7-id" role="tab" data-toggle="tab">
-                Модель
+                Schema
             </a>
         </li>
         <li role="presentation">
             <a href="#tab-8-id" aria-controls="tab-8-id" role="tab" data-toggle="tab">
-                Ответ
+                Response
             </a>
         </li>
     </ul>
@@ -495,17 +495,17 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/complete'
 
 Получает список инициатив в статусе «В архиве».
 
-##### Параметры
+##### Path Parameters
 
-Не используются.
+Not used.
 
-##### Пример запроса
+##### Example of API call
 
 ```bash
 curl --location --request GET 'https://www.roi.ru/api/petitions/archive'
 ````
 
-##### Успешный ответ на запрос (HTTP 200)
+##### Success response (HTTP 200)
 
 Значения справочника уровней реализации инициатив.
 
@@ -515,12 +515,12 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/archive'
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active">
       <a href="#tab-9-id" aria-controls="tab-9-id" role="tab" data-toggle="tab">
-                Модель
+                Schema
             </a>
         </li>
         <li role="presentation">
             <a href="#tab-10-id" aria-controls="tab-10-id" role="tab" data-toggle="tab">
-                Ответ
+                Response
             </a>
         </li>
     </ul>
@@ -644,7 +644,7 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/archive'
 
 **id** <span style="color: #848484; font-weight: 400; text-transform: lowercase;">(обязательный)</span> - Идентификатор инициативы.
 
-##### Пример запроса
+##### Example of API call
 
 {% include note.html content="приведен пример по инициативе “Мой дом - моя крепость!” (id=1016)." %}
 
@@ -652,7 +652,7 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/archive'
 curl --location --request GET 'https://www.roi.ru/api/petition/1016'
 ````
 
-##### Успешный ответ на запрос (HTTP 200)
+##### Success response (HTTP 200)
 
 Значения справочника уровней реализации инициатив.
 
@@ -662,12 +662,12 @@ curl --location --request GET 'https://www.roi.ru/api/petition/1016'
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active">
       <a href="#tab-11-id" aria-controls="tab-11-id" role="tab" data-toggle="tab">
-                Модель
+                Schema
             </a>
         </li>
         <li role="presentation">
             <a href="#tab-12-id" aria-controls="tab-12-id" role="tab" data-toggle="tab">
-                Ответ
+                Response
             </a>
         </li>
     </ul>
