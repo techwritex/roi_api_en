@@ -68,7 +68,7 @@ curl --location --request GET 'https://www.roi.ru/api/attributes/level'
             <div class="container-fluid" markdown="1">    
 
 |-------|--------|---------|
-| ***data***  | *array* | *Корневой элемент данных*  |
+| ***data***  | *array* | *Root data element*  |
 | **id** | integer | Идентификатор |
 | **title** | string | Уровень реализации |
 
@@ -113,7 +113,7 @@ The request has not been completed because of invalid authentication credentials
 
 <span class="label label-success" style="font-size: .9em;">GET</span> **/attributes/status**
 
-This endpoint allows you to get values of petition stauses.
+This endpoint allows you to get values of petition statuses.
 
 ##### Path Parameters
 
@@ -149,7 +149,7 @@ curl --location --request GET 'https://www.roi.ru/api/attributes/status'
             <div class="container-fluid" markdown="1">    
 
 |-------|--------|---------|
-| ***data***  | *array* | *Корневой элемент данных*  |
+| ***data***  | *array* | *Root data element*  |
 | **id** | integer | Идентификатор |
 | **title** | string | Статусы инициативы |
 
@@ -238,7 +238,7 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/poll'
             <div class="container-fluid" markdown="1">    
 
 |-------|--------|---------|
-| ***data***  | *array* | *Корневой элемент данных*  |
+| ***data***  | *array* | *Root data element*  |
 | **id** | integer | Идентификатор |
 | **title** | string | Наименование инициативы |
 | ***geo***  | *object* | *Информация о местоположении* |
@@ -386,7 +386,7 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/complete'
             <div class="container-fluid" markdown="1">    
 
 |-------|--------|---------|
-| ***data***  | *array* | *Корневой элемент данных*  |
+| ***data***  | *array* | *Root data element*  |
 | **id** | integer | Идентификатор |
 | **title** | string | Наименование инициативы |
 | ***geo***  | *object* | *Информация о местоположении* |
@@ -531,7 +531,7 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/archive'
             <div class="container-fluid" markdown="1">    
 
 |-------|--------|---------|
-| ***data***  | *array* | *Корневой элемент данных*  |
+| ***data***  | *array* | *Root data element*  |
 | **id** | integer | Идентификатор |
 | **title** | string | Наименование инициативы |
 | ***geo***  | *object* | *Информация о местоположении* |
@@ -678,7 +678,7 @@ curl --location --request GET 'https://www.roi.ru/api/petition/1016'
             <div class="container-fluid" markdown="1">    
 
 |-------|--------|---------|
-| ***data***  | *array* | *Корневой элемент данных*  |
+| ***data***  | *array* | *Root data element*  |
 | **id** | integer | Идентификатор |
 | **code** | string | Номер инициативы |
 | **url**  | string | Ссылка на инициативу |
