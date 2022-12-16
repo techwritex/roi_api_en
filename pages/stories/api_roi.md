@@ -8,7 +8,7 @@ summary: "v 1.0"
 ---
 
 
-## Общая информация
+## General information
 
 - Взаимодействие с платформой осуществляется через REST API.
 
@@ -24,11 +24,11 @@ summary: "v 1.0"
 
 ## Resources description
 
-### Справочники
+### Attributes
 
 Supporting data for structuring and storing initiatives.
 
-#### Initiatives implementation levels
+#### Petition implementation levels
 
 <span class="label label-success" style="font-size: .9em;">GET</span> **/attributes/level**
 
@@ -109,7 +109,7 @@ The request has not been completed because of invalid authentication credentials
 
 ***
 
-#### Статусы инициативы
+#### Petition status
 
 <span class="label label-success" style="font-size: .9em;">GET</span> **/attributes/status**
 
@@ -194,11 +194,11 @@ The request has not been completed because of invalid authentication credentials
 
 ***
 
-### Инициативы
+### Petitions
 
 Предложения граждан России по вопросам социально-экономического развития страны, совершенствования государственного и муниципального управления.
 
-#### Инициативы в статусе “На голосовании”
+#### Petitions in the `pool` status
 
 <span class="label label-success" style="font-size: .9em;">GET</span> **/petitions/poll**
 
@@ -346,7 +346,7 @@ The request has not been completed because of invalid authentication credentials
 
 ***
 
-#### Инициативы в статусе “Решение принято”
+#### Petitions in the `complete` status
 
 <span class="label label-success" style="font-size: .9em;">GET</span> **/petitions/complete**
 
@@ -491,7 +491,7 @@ The request has not been completed because of invalid authentication credentials
 
 ***
 
-#### Инициативы в статусе “В архиве”
+#### Petitions in the `archive` status
 
 <span class="label label-success" style="font-size: .9em;">GET</span> **/petitions/archive**
 
@@ -636,7 +636,7 @@ The request has not been completed because of invalid authentication credentials
 
 ***
 
-#### Initiative
+#### Petition
 
 <span class="label label-success" style="font-size: .9em;">GET</span> **/petition/{id}**
 
