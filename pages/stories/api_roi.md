@@ -69,8 +69,8 @@ curl --location --request GET 'https://www.roi.ru/api/attributes/level'
 
 |-------|--------|---------|
 | ***data***  | *array* | *Root data element*  |
-| **id** | integer | Идентификатор |
-| **title** | string | Уровень реализации |
+| **id** | integer | Petition implementation level identifier |
+| **title** | string | Petition implementation level title |
 
 </div> <!-- This close tag must be left aligned. -->
         </div>
@@ -150,8 +150,8 @@ curl --location --request GET 'https://www.roi.ru/api/attributes/status'
 
 |-------|--------|---------|
 | ***data***  | *array* | *Root data element*  |
-| **id** | integer | Идентификатор |
-| **title** | string | Статусы инициативы |
+| **id** | integer | Petition status identifier |
+| **title** | string | Petition status title |
 
 </div> <!-- This close tag must be left aligned. -->
         </div>
@@ -239,18 +239,18 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/poll'
 
 |-------|--------|---------|
 | ***data***  | *array* | *Root data element*  |
-| **id** | integer | Идентификатор |
-| **title** | string | Наименование инициативы |
-| ***geo***  | *object* | *Информация о местоположении* |
-| **geo.area**  | string | Федеральный округ |
-| **geo.region**  | string | Регион |
-| **geo.municipality**  | string | Муниципалитет |
-| ***level***  | *object* | *Уровень инициативы*  |
-| **level.id**  | integer | Идентификатор уровня |
-| **level.title**  | string | Наименование уровня | 
-| ***status***  | *object* | *Статус инициативы*  |
-| **status.id**  | integer | Идентификатор статуса |
-| **status.title** | string | Наименование статуса 
+| **id** | integer | Petition identifier |
+| **title** | string | Petition title |
+| ***geo***  | *object* | *Location Information* |
+| **geo.area**  | string | Federal district |
+| **geo.region**  | string | Federal region |
+| **geo.municipality**  | string | Municipality |
+| ***level***  | *object* | *Petition implementation level*  |
+| **level.id**  | integer | Petition implementation level identifier |
+| **level.title**  | string | Petition implementation level title | 
+| ***status***  | *object* | *Petition status*  |
+| **status.id**  | integer | Petition status identifier |
+| **status.title** | string | Petition status title 
 
 
 </div> <!-- This close tag must be left aligned. -->
@@ -387,18 +387,18 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/complete'
 
 |-------|--------|---------|
 | ***data***  | *array* | *Root data element*  |
-| **id** | integer | Идентификатор |
-| **title** | string | Наименование инициативы |
-| ***geo***  | *object* | *Информация о местоположении* |
+| **id** | integer | Petition identifier |
+| **title** | string | Petition title |
+| ***geo***  | *object* | *Location Information* |
 | **geo.area**  | string | Федеральный округ |
 | **geo.region**  | string | Регион |
 | **geo.municipality**  | string | Муниципалитет |
-| ***level***  | *object* | *Уровень инициативы*  |
-| **level.id**  | integer | Идентификатор уровня |
-| **level.title**  | string | Наименование уровня | 
-| ***status***  | *object* | *Статус инициативы*  |
-| **status.id**  | integer | Идентификатор статуса |
-| **status.title** | string | Наименование статуса 
+| ***level***  | *object* | *Petition implementation level*  |
+| **level.id**  | integer | Petition implementation level identifier |
+| **level.title**  | string | Petition implementation level title | 
+| ***status***  | *object* | *Petition status*  |
+| **status.id**  | integer | Petition status identifier |
+| **status.title** | string | Petition status title | 
 | ***result***  | *object* | *Информация о решении по инициативе*  |
 | **result.id**  | integer | Идентификатор решения |
 | **result.title**  | string | Наименование решения |
@@ -532,18 +532,18 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/archive'
 
 |-------|--------|---------|
 | ***data***  | *array* | *Root data element*  |
-| **id** | integer | Идентификатор |
-| **title** | string | Наименование инициативы |
-| ***geo***  | *object* | *Информация о местоположении* |
+| **id** | integer | Petition identifier |
+| **title** | string | Petition title |
+| ***geo***  | *object* | *Location Information* |
 | **geo.area**  | string | Федеральный округ |
 | **geo.region**  | string | Регион |
 | **geo.municipality**  | string | Муниципалитет |
-| ***level***  | *object* | *Уровень инициативы*  |
-| **level.id**  | integer | Идентификатор уровня |
-| **level.title**  | string | Наименование уровня | 
-| ***status***  | *object* | *Статус инициативы*  |
-| **status.id**  | integer | Идентификатор статуса |
-| **status.title** | string | Наименование статуса |
+| ***level***  | *object* | *Petition implementation level*  |
+| **level.id**  | integer | Petition implementation level identifier |
+| **level.title**  | string | Petition implementation level title | 
+| ***status***  | *object* | *Petition status*  |
+| **status.id**  | integer | Petition status identifier |
+| **status.title** | string | Petition status title |
 
 </div> <!-- This close tag must be left aligned. -->
         </div>
@@ -679,15 +679,15 @@ curl --location --request GET 'https://www.roi.ru/api/petition/1016'
 
 |-------|--------|---------|
 | ***data***  | *array* | *Root data element*  |
-| **id** | integer | Идентификатор |
-| **code** | string | Номер инициативы |
-| **url**  | string | Ссылка на инициативу |
-| ***level***  | *object* | *Уровень инициативы*  |
-| **level.id**  | integer | Идентификатор уровня |
-| **level.title**  | string | Наименование уровня | 
-| ***status***  | *object* | *Статус инициативы*  |
-| **status.id**  | integer | Идентификатор статуса |
-| **status.title** | string | Наименование статуса |
+| **id** | integer | Petition identifier |
+| **code** | string | Petition document number |
+| **url**  | string | Petition link |
+| ***level***  | *object* | *Petition implementation level*  |
+| **level.id**  | integer | Petition implementation level identifier |
+| **level.title**  | string | Petition implementation level title | 
+| ***status***  | *object* | *Petition status*  |
+| **status.id**  | integer | Petition status identifier |
+| **status.title** | string | Petition status title |
 | ***result***  | *object* | *Информация о решении по инициативе*  |
 | **result.id**  | integer | Идентификатор решения |
 | **result.title**  | string | Наименование решения |
@@ -706,7 +706,7 @@ curl --location --request GET 'https://www.roi.ru/api/petition/1016'
 | ***category***  | *object* | *Категория инициативы*  |
 | ***category.id***  | integer | Идентификатор категории |
 | **category.title**  | string | Наименование категории | 
-| ***geo***  | *object* | *Информация о местоположении* |
+| ***geo***  | *object* | *Location Information* |
 | **geo.area**  | string | Федеральный округ |
 | **geo.region**  | string | Регион |
 | **geo.municipality**  | string | Муниципалитет |
