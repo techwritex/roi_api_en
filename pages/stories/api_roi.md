@@ -535,9 +535,9 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/archive'
 | **id** | integer | Petition identifier |
 | **title** | string | Petition title |
 | ***geo***  | *object* | *Location Information* |
-| **geo.area**  | string | Федеральный округ |
-| **geo.region**  | string | Регион |
-| **geo.municipality**  | string | Муниципалитет |
+| **geo.area**  | string | Federal district |
+| **geo.region**  | string | Federal region |
+| **geo.municipality**  | string | Municipality |
 | ***level***  | *object* | *Petition implementation level*  |
 | **level.id**  | integer | Petition implementation level identifier |
 | **level.title**  | string | Petition implementation level title | 
@@ -688,39 +688,39 @@ curl --location --request GET 'https://www.roi.ru/api/petition/1016'
 | ***status***  | *object* | *Petition status*  |
 | **status.id**  | integer | Petition status identifier |
 | **status.title** | string | Petition status title |
-| ***result***  | *object* | *Информация о решении по инициативе*  |
-| **result.id**  | integer | Идентификатор решения |
-| **result.title**  | string | Наименование решения |
-| **title** | string | Наименование инициативы |
-| **description** | string | Описание инициативы |
-| ***attachment***  | *object* | *Дополнительные материалы*  |
-| ***attachment.photo***  | *object* | *Сопроводительные фотографии* |
-| **attachment.photo.title**  | string | Наименование фотографии |
-| **attachment.photo.url**  | string | Ссылка на фотографию |
-| ***attachment.document***  | *object* | *Сопроводительные документы инициативы* |
-| **attachment.document.title**  | string | Наименование документа |
-| **attachment.document.url**  | string | Ссылка на документ |
-| ***decision***  | *object* | *Предлагаемое решение по инициативе*  |
-| **decision.text**  | string | Текст предлагаемого решения |
-| **prospective** | string | Описание проблемы|
-| ***category***  | *object* | *Категория инициативы*  |
-| ***category.id***  | integer | Идентификатор категории |
-| **category.title**  | string | Наименование категории | 
+| ***result***  | *object* | *Petition result information*  |
+| **result.id**  | integer | Petition result identifier |
+| **result.title**  | string | Petition result title |
+| **title** | string | Petition title |
+| **description** | string | Petition description |
+| ***attachment***  | *object* | *Additional information*  |
+| ***attachment.photo***  | *object* | *Photos* |
+| **attachment.photo.title**  | string | Photo title |
+| **attachment.photo.url**  | string | Photo url |
+| ***attachment.document***  | *object* | *Documents* |
+| **attachment.document.title**  | string | Document title |
+| **attachment.document.url**  | string | Document url |
+| ***decision***  | *object* | *Suggested solution*  |
+| **decision.text**  | string | Suggested solution text |
+| **prospective** | string | Problem description|
+| ***category***  | *object* | *Petition category*  |
+| ***category.id***  | integer | Petition category identifier |
+| **category.title**  | string | Petition category title | 
 | ***geo***  | *object* | *Location Information* |
-| **geo.area**  | string | Федеральный округ |
-| **geo.region**  | string | Регион |
-| **geo.municipality**  | string | Муниципалитет |
-| ***date***  | *object* | *Информация о датах инициативы* |
-| ***date.poll***  | *object* | *Дата публикации инициативы* |
-| **date.poll.begin**  | integer | Дата начала голосования |
-| **date.poll.end** | integer | Дата окончания голосования |
-| ***vote***  | *object* | *Информация о голосах инициативы* |
-| **vote.progress**  | float | Прогресс набора необходимого порога голосов, % |
-| **vote.threshold**  | integer | Порог голосов |
-| **vote.affirmative**  | integer | Подано голосов «За» инициативу |
-| **vote.negative**  | integer | Подано голосов «Против» инициативы | 
-| ***authorship***  | *object* | *Другие инициативы на голосовании автора*  |
-| **authorship.id**  | integer | Идентификатор другой инициативы на голосовании автора | 
+| **geo.area**  | string | Federal district |
+| **geo.region**  | string | Federal region |
+| **geo.municipality**  | string | Federal district |
+| ***date***  | *object* | *Petition dates* |
+| ***date.poll***  | *object* | *Petition publication date* |
+| **date.poll.begin**  | integer | Voting start date |
+| **date.poll.end** | integer | Voting start date |
+| ***vote***  | *object* | *Information about petition votes* |
+| **vote.progress**  | float | Voting progress, % |
+| **vote.threshold**  | integer | Voting Threshold |
+| **vote.affirmative**  | integer | Supported the petition |
+| **vote.negative**  | integer | Rejected the petition | 
+| ***authorship***  | *object* | *Other petitions of the author*  |
+| **authorship.id**  | integer | Other petition identifier | 
 
 
 </div> <!-- This close tag must be left aligned. -->
