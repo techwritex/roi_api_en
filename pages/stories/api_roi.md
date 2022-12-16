@@ -32,7 +32,7 @@ Supporting data for structuring and storing initiatives.
 
 <span class="label label-success" style="font-size: .9em;">GET</span> **/attributes/level**
 
-This endpoint allows you to get values of initiatives implementation levels.
+This endpoint allows you to get values of petition implementation levels.
 
 ##### Path Parameters
 
@@ -109,11 +109,11 @@ The request has not been completed because of invalid authentication credentials
 
 ***
 
-#### Petition status
+#### Petition statuses
 
 <span class="label label-success" style="font-size: .9em;">GET</span> **/attributes/status**
 
-Получает значения справочника со статусами инициативы.
+This endpoint allows you to get values of petition stauses.
 
 ##### Path Parameters
 
@@ -196,13 +196,13 @@ The request has not been completed because of invalid authentication credentials
 
 ### Petitions
 
-Предложения граждан России по вопросам социально-экономического развития страны, совершенствования государственного и муниципального управления.
+Proposals of citizens of Russia on the issues of socio-economic development of the country, improvement of state and municipal government.
 
 #### Petitions in the `pool` status
 
 <span class="label label-success" style="font-size: .9em;">GET</span> **/petitions/poll**
 
-Получает список инициатив в статусе «На голосовании».
+This endpoint allows you to get list of petitions in the `pool` status.
 
 ##### Path Parameters
 
@@ -350,7 +350,7 @@ The request has not been completed because of invalid authentication credentials
 
 <span class="label label-success" style="font-size: .9em;">GET</span> **/petitions/complete**
 
-Получает список инициатив в статусе «Решение принято».
+This endpoint allows you to get list of petitions in the `complete` status.
 
 ##### Path Parameters
 
@@ -495,7 +495,7 @@ The request has not been completed because of invalid authentication credentials
 
 <span class="label label-success" style="font-size: .9em;">GET</span> **/petitions/archive**
 
-Получает список инициатив в статусе «В архиве».
+This endpoint allows you to get list of petitions in the `archive` status.
 
 ##### Path Parameters
 
@@ -640,7 +640,7 @@ The request has not been completed because of invalid authentication credentials
 
 <span class="label label-success" style="font-size: .9em;">GET</span> **/petition/{id}**
 
-Получает информацию по интересующей инициативе.
+This endpoint allows you to get information about specific petition.
 
 ##### Path Parameters
 
@@ -648,7 +648,7 @@ The request has not been completed because of invalid authentication credentials
 
 ##### Example of API call
 
-{% include note.html content="Example based on Initiative ID 1016 - *Мой дом - моя крепость!*" %}
+{% include note.html content="Example based on Initiative ID 1016 (*Мой дом - моя крепость!*)" %}
 
 ```bash
 curl --location --request GET 'https://www.roi.ru/api/petition/1016'
