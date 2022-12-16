@@ -10,13 +10,11 @@ summary: "v 1.0"
 
 ## General information
 
-- Взаимодействие с платформой осуществляется через REST API.
+- The API uses HTTPS.
 
-- API функционирует в режиме чтения данных (GET-запросы).
+- Available operations for the API is `GET` only.
 
-- Все запросы выполняются только по протоколу HTTPS.
-
-- Ответы на запросы предоставляются в формате JSON.
+- The API uses JSON as the exchange format.
 
 - No sign up or API key needed.
 
@@ -390,18 +388,18 @@ curl --location --request GET 'https://www.roi.ru/api/petitions/complete'
 | **id** | integer | Petition identifier |
 | **title** | string | Petition title |
 | ***geo***  | *object* | *Location Information* |
-| **geo.area**  | string | Федеральный округ |
-| **geo.region**  | string | Регион |
-| **geo.municipality**  | string | Муниципалитет |
+| **geo.area**  | string | Federal district |
+| **geo.region**  | string | Federal region |
+| **geo.municipality**  | string | Municipality |
 | ***level***  | *object* | *Petition implementation level*  |
 | **level.id**  | integer | Petition implementation level identifier |
 | **level.title**  | string | Petition implementation level title | 
 | ***status***  | *object* | *Petition status*  |
 | **status.id**  | integer | Petition status identifier |
 | **status.title** | string | Petition status title | 
-| ***result***  | *object* | *Информация о решении по инициативе*  |
-| **result.id**  | integer | Идентификатор решения |
-| **result.title**  | string | Наименование решения |
+| ***result***  | *object* | *Petition result information*  |
+| **result.id**  | integer | Petition result identifier |
+| **result.title**  | string | Petition result title |
 
 
 </div> <!-- This close tag must be left aligned. -->
